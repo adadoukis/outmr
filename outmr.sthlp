@@ -96,7 +96,7 @@ Email {browse "mailto:aristeidis.dadoukis@gmail.com":aristeidis.dadoukis@gmail.c
 Related commands:
 
 {help mrobust} (if installed) {stata ssc install mrobust, replace} (to install this command)
-{help texdoc}  (if installed) {stata ssc install texdoc, replace} (to install this command)
+{help texdoc}  (if installed) {stata ssc install texdoc, replace}  (to install this command)
 
 
 

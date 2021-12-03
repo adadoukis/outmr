@@ -191,7 +191,7 @@ email[aristeidis.dadoukis@gmail.com]
 
 seealso[
 {help mrobust} (if installed) {stata ssc install mrobust, replace} (to install this command)
-{help texdoc}  (if installed) {stata ssc install texdoc, replace} (to install this command)
+{help texdoc}  (if installed) {stata ssc install texdoc, replace}  (to install this command)
 
 
 ]
