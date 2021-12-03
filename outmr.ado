@@ -8,7 +8,7 @@ program define outmr
 version 14 
 
 
-syntax [anything] [using] [, Title(string) Label(string) Notes(string asis) COEFlabels(string asis) REPlace Dec(int 4) ]
+syntax [anything] [using] [, Title(string) Label(string) Notes(string asis) COEFlabels(string asis) REPlace Dec(int 4)] 
 // 
 	if missing(`dec')  {
 		local dp = 4
@@ -156,35 +156,38 @@ end
 title[A command to export mrobust results into LaTex or Word]
 
 desc[
- {cmd:sampsi_gehan} calculates the sample sizes for the first and second stages of the Gehan design
-    (1961).
+ {cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.
 ]
-opt[beta() specifies the first stage maximum probability of seeing no responses.]
-opt[p1() specifies the desired probability of response.]
-opt[se()  specifies the desired standard error in the second stage.]
-opt[start() specifies the smallest n to start the search from.]
-opt[precp() specifies the probability used in the standard error formula.]
+
+{synoptset 20 tabbed}{...}
+{synopthdr}
+{synoptline}
+{syntab:Main}
+opt[title(string) Title to be included in LaTex.]
+opt[label(string) Label to be included in LaTex.]
+opt[notes(string) Notes for the table.  For new line, use "\\".]
+opt[replace specifies that the old help file is replaced.]
+opt[dec() # for decimal places.  The default is 4.]
+opt[coeflabels(string) Coefficient labels.  This option is currently not supported.]
+{synoptline}
+{p2colreset}{...}
+{p 4 6 2}
+{syntab:Optional}
 
 
-opt2[precp() specifies the probability used in the standard error formula.
-and I wanted more than one line for the longer  descriptions of the
-option precp() later in the help file]
 
 example[
  {stata sysuse nlsw88, clear}
+ 
  {stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure}
 ]
 author[Aristeidis Dadoukis]
 institute[The University of Nottingham]
 email[aristeidis.dadoukis@gmail.com]
 
-return[n1 The first stage sample size]
-return[p1 The interesting p1 ]
-return[beta The type 2 error]
-return[se Standard error]
-return[n2 The second stage sample size]
 
-freetext[]
+
+freetext[fdfdfd]
 
 references[
 

@@ -26,17 +26,17 @@
 {synoptline}
 
 {syntab:Optional}
-{synopt:{opt t:itle(string)}}  
+{synopt:{opt t:itle(string)}} Title to be included in LaTex.
 
-{synopt:{opt l:abel(string)}}  
+{synopt:{opt l:abel(string)}} Label to be included in LaTex.
 
-{synopt:{opt n:otes(string asis)}}  
+{synopt:{opt n:otes(string asis)}} Notes for the table.  For new line, use "\\".
 
-{synopt:{opt coef:labels(string asis)}}  
+{synopt:{opt coef:labels(string asis)}} Coefficient labels.  This option is currently not supported.
 
-{synopt:{opt rep:lace}} replace 
+{synopt:{opt rep:lace}} specifies that the old help file is replaced.
 
-{synopt:{opt d:ec(#)}}  Default value is 4.
+{synopt:{opt d:ec(#)}} # for decimal places.  The default is 4.
 
 {synoptline}
 {p2colreset}{...}
@@ -47,30 +47,29 @@
 {pstd}
 
 {pstd}
- {cmd:sampsi_gehan} calculates the sample sizes for the first and second stages of the Gehan design
-    (1961).
+ {cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.
 
 {marker options}{...}
 {title:Options}
 {dlgtab:Main}
 
 {phang}
-{opt t:itle(string)}  
+{opt t:itle(string)}  Title to be included in LaTex.
 
 {phang}
-{opt l:abel(string)}  
+{opt l:abel(string)}  Label to be included in LaTex.
 
 {phang}
-{opt n:otes(string asis)}  
+{opt n:otes(string asis)}  Notes for the table.  For new line, use "\\".
 
 {phang}
-{opt coef:labels(string asis)}  
+{opt coef:labels(string asis)}  Coefficient labels.  This option is currently not supported.
 
 {phang}
-{opt rep:lace} replace 
+{opt rep:lace} replace specifies that the old help file is replaced.
 
 {phang}
-{opt d:ec(#)}  
+{opt d:ec(#)}  # for decimal places.  The default is 4.
 
 
 
@@ -78,6 +77,7 @@
 {title:Examples}
 
  {stata sysuse nlsw88, clear}
+ 
  {stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure}
 
 
@@ -87,8 +87,7 @@
 {pstd}
 
 {pstd}
-
-{pstd}
+fdfdfd
 
 {pstd}
 
