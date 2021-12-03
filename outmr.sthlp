@@ -76,9 +76,14 @@
 {marker examples}{...}
 {title:Examples}
 
+ {Setup}
  {stata sysuse nlsw88, clear}
  
- {stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure}
+ {Call mrobust for estimation}
+ {stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
+ 
+ {Export results to LaTex}
+ {outmr using results.tex, title(Add this title to the table) notes(This is a note) replace}
 
 
 {title:References}
@@ -105,6 +110,7 @@ Email {browse "mailto:aristeidis.dadoukis@gmail.com":aristeidis.dadoukis@gmail.c
 Related commands:
 
 {help mrobust} (if installed)  {stata ssc install mrobust, replace} (to install this command)
+{help texdoc} (if installed)  {stata ssc install texdoc, replace} (to install this command)
 
 
 
