@@ -168,7 +168,7 @@ opt[label(string) Label to be included in LaTex.]
 opt[notes(string) Notes for the table.  For new line, use "\\".]
 opt[replace specifies that the old help file is replaced.]
 opt[dec() Set format for statistics.  The default is 4dp.]
-opt[coeflabels(string) Coefficient labels.  This option is currently not supported.  The current version will report the labels of the variables.  You can include LaTex math notations in LaTex using \( \).]
+opt[coeflabels(string) Coefficient labels.  This option is currently not supported.  The current version will report the labels of the variables.  You can include LaTex math notations using \( \).]
 {synoptline}
 {p2colreset}{...}
 {p 4 6 2}
@@ -178,22 +178,32 @@ opt[coeflabels(string) Coefficient labels.  This option is currently not support
 
 example[
 {pstd}Setup: Example 1
- {stata sysuse nlsw88, clear}
+
+{phang2}{stata sysuse nlsw88, clear}
+
 {pstd}Execute mrobust 
- {stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
+
+{phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
+
 {pstd}Export results to results.tex file
- {stata outmr using results.tex, title(Add this title to the table) notes(This is a note) replace}
+
+{phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) replace}
  
 {pstd}Setup: Example 
- {stata sysuse nlsw88, clear}
+
+{phang2}{stata sysuse nlsw88, clear}
+
 {pstd}Change the label of age to age_it 
- {stata label var age "\(age_{it}\)"}
+
+{stata label var age "\(age_{it}\)"}
 
 {pstd}Execute mrobust 
- {stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
+
+{phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
 
 {pstd}Export results to results.tex file using 3 decimal points
- {stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
+
+{phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
  
 ]
 author[Aristeidis Dadoukis]

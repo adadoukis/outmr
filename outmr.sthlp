@@ -32,7 +32,7 @@
 
 {synopt:{opt n:otes(string asis)}} Notes for the table.  For new line, use "\\".
 
-{synopt:{opt coef:labels(string asis)}} Coefficient labels.  This option is currently not supported.  The current version will report the labels of the variables.  You can include LaTex math notations in LaTex using \( \).
+{synopt:{opt coef:labels(string asis)}} Coefficient labels.  This option is currently not supported.  The current version will report the labels of the variables.  You can include LaTex math notations using \( \).
 
 {synopt:{opt rep:lace}} specifies that the old help file is replaced.
 
@@ -63,7 +63,7 @@
 {opt n:otes(string asis)}  Notes for the table.  For new line, use "\\".
 
 {phang}
-{opt coef:labels(string asis)}  Coefficient labels.  This option is currently not supported.  The current version will report the labels of the variables.  You can include LaTex math notations in LaTex using \( \).
+{opt coef:labels(string asis)}  Coefficient labels.  This option is currently not supported.  The current version will report the labels of the variables.  You can include LaTex math notations using \( \).
 
 {phang}
 {opt rep:lace} replace specifies that the old help file is replaced.
@@ -77,22 +77,32 @@
 {title:Examples}
 
 {pstd}Setup: Example 1
- {stata sysuse nlsw88, clear}
+
+{phang2}{stata sysuse nlsw88, clear}
+
 {pstd}Execute mrobust 
- {stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
+
+{phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
+
 {pstd}Export results to results.tex file
- {stata outmr using results.tex, title(Add this title to the table) notes(This is a note) replace}
+
+{phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) replace}
  
 {pstd}Setup: Example 
- {stata sysuse nlsw88, clear}
+
+{phang2}{stata sysuse nlsw88, clear}
+
 {pstd}Change the label of age to age_it 
- {stata label var age "\(age_{it}\)"}
+
+{stata label var age "\(age_{it}\)"}
 
 {pstd}Execute mrobust 
- {stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
+
+{phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
 
 {pstd}Export results to results.tex file using 3 decimal points
- {stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
+
+{phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
  
 
 
