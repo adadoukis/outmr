@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 1.0  3 Dec 2021}{...}
+{* *! version 1.0  4 Dec 2021}{...}
 {vieweralsosee "" "--"}{...}
 {vieweralsosee "Install command2" "ssc install command2"}{...}
 {vieweralsosee "Help command2 (if installed)" "help command2"}{...}
@@ -32,11 +32,11 @@
 
 {synopt:{opt n:otes(string asis)}} Notes for the table.  For new line, use "\\".
 
-{synopt:{opt coef:labels(string asis)}} Coefficient labels.  This option is currently not supported.
+{synopt:{opt coef:labels(string asis)}} Coefficient labels.  This option is currently not supported.  The current version will report the labels of the variables.  You can include LaTex math notations in LaTex using \( \).
 
 {synopt:{opt rep:lace}} specifies that the old help file is replaced.
 
-{synopt:{opt d:ec(#)}} # for decimal places.  The default is 4.
+{synopt:{opt d:ec(#)}} Set format for statistics.  The default is 4dp.
 
 {synoptline}
 {p2colreset}{...}
@@ -63,24 +63,37 @@
 {opt n:otes(string asis)}  Notes for the table.  For new line, use "\\".
 
 {phang}
-{opt coef:labels(string asis)}  Coefficient labels.  This option is currently not supported.
+{opt coef:labels(string asis)}  Coefficient labels.  This option is currently not supported.  The current version will report the labels of the variables.  You can include LaTex math notations in LaTex using \( \).
 
 {phang}
 {opt rep:lace} replace specifies that the old help file is replaced.
 
 {phang}
-{opt d:ec(#)}  # for decimal places.  The default is 4.
+{opt d:ec(#)}  Set format for statistics.  The default is 4dp.
 
 
 
 {marker examples}{...}
 {title:Examples}
 
+{pstd}Setup: Example 1
  {stata sysuse nlsw88, clear}
- 
+{pstd}Execute mrobust 
  {stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
- 
+{pstd}Export results to results.tex file
  {stata outmr using results.tex, title(Add this title to the table) notes(This is a note) replace}
+ 
+{pstd}Setup: Example 
+ {stata sysuse nlsw88, clear}
+{pstd}Change the label of age to age_it 
+ {stata label var age "\(age_{it}\)"}
+
+{pstd}Execute mrobust 
+ {stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
+
+{pstd}Export results to results.tex file using 3 decimal points
+ {stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
+ 
 
 
 {title:Author}
