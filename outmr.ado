@@ -160,17 +160,15 @@ desc[
  {cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.
 ]
 
-{marker options}{...}
-{title:Options}
-{phang}{opt title(string)} Specifies the caption of the table.
+[opt title(string)} Specifies the caption of the table.]
 
-{phang}{opt label(string)} Specifies the label of the table
+[opt label(string)} Specifies the label of the table]
 
-{phang}{opt notes(string)} Specifies the notes of the table
+[opt notes(string)} Specifies the notes of the table]
 
-{phang}{opt coeflabels(string)} Specifies the format of the coefficient labels.  The current version of outmr is using the labels of each variable.  To include math notation in LaTex use \(\).
+[opt coeflabels(string)} Specifies the format of the coefficient labels.  The current version of outmr is using the labels of each variable.  To include math notation in LaTex use \(\).]
 
-{phang}{opt dec(#)} Specifies the format of the coefficients.  The default is 4dp.
+[opt dec(#)} Specifies the format of the coefficients.  The default is 4dp.]
 
 example[
 {pstd}Setup: Example 1
