@@ -26,17 +26,17 @@
 {synoptline}
 
 {syntab:Optional}
-{synopt:{opt t:itle(string)}} Title to be included in LaTex.
+{synopt:{opt t:itle(string)}}  
 
-{synopt:{opt l:abel(string)}} Label to be included in LaTex.
+{synopt:{opt l:abel(string)}}  
 
-{synopt:{opt n:otes(string asis)}} Notes for the table.  For new line, use "\\".
+{synopt:{opt n:otes(string asis)}}  
 
-{synopt:{opt coef:labels(string asis)}} Coefficient labels.  This option is currently not supported.  The current version will report the labels of the variables.  You can include LaTex math notations using \( \).
+{synopt:{opt coef:labels(string asis)}}  
 
-{synopt:{opt rep:lace}} specifies that the old help file is replaced.
+{synopt:{opt rep:lace}} replace 
 
-{synopt:{opt d:ec(#)}} Set format for statistics.  The default is 4dp.
+{synopt:{opt d:ec(#)}}  Default value is 4.
 
 {synoptline}
 {p2colreset}{...}
@@ -54,22 +54,22 @@
 {dlgtab:Main}
 
 {phang}
-{opt t:itle(string)}  Title to be included in LaTex.
+{opt t:itle(string)}  
 
 {phang}
-{opt l:abel(string)}  Label to be included in LaTex.
+{opt l:abel(string)}  
 
 {phang}
-{opt n:otes(string asis)}  Notes for the table.  For new line, use "\\".
+{opt n:otes(string asis)}  
 
 {phang}
-{opt coef:labels(string asis)}  Coefficient labels.  This option is currently not supported.  The current version will report the labels of the variables.  You can include LaTex math notations using \( \).
+{opt coef:labels(string asis)}  
 
 {phang}
-{opt rep:lace} replace specifies that the old help file is replaced.
+{opt rep:lace} replace 
 
 {phang}
-{opt d:ec(#)}  Set format for statistics.  The default is 4dp.
+{opt d:ec(#)}  
 
 
 
@@ -94,7 +94,7 @@
 
 {pstd}Change the label of age to age_it 
 
-{stata label var age "\(age_{it}\)"}
+{phang2}{stata label var age "\(age_{it}\)"}
 
 {pstd}Execute mrobust 
 

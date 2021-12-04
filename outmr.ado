@@ -159,22 +159,6 @@ desc[
  {cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.
 ]
 
-{synoptset 20 tabbed}{...}
-{synopthdr}
-{synoptline}
-{syntab:Main}
-opt[title(string) Title to be included in LaTex.]
-opt[label(string) Label to be included in LaTex.]
-opt[notes(string) Notes for the table.  For new line, use "\\".]
-opt[replace specifies that the old help file is replaced.]
-opt[dec() Set format for statistics.  The default is 4dp.]
-opt[coeflabels(string) Coefficient labels.  This option is currently not supported.  The current version will report the labels of the variables.  You can include LaTex math notations using \( \).]
-{synoptline}
-{p2colreset}{...}
-{p 4 6 2}
-{syntab:Optional}
-
-
 
 example[
 {pstd}Setup: Example 1
@@ -195,7 +179,7 @@ example[
 
 {pstd}Change the label of age to age_it 
 
-{stata label var age "\(age_{it}\)"}
+{phang2}{stata label var age "\(age_{it}\)"}
 
 {pstd}Execute mrobust 
 
