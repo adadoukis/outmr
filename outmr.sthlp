@@ -76,7 +76,7 @@
 {marker examples}{...}
 {title:Examples}
 
-{bf}{pstd}Setup: Example 1{bf}
+{pstd}Example 1: Setup
 
 {phang2}{stata sysuse nlsw88, clear}
 
@@ -88,7 +88,7 @@
 
 {phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) replace}
  
-{pstd}Setup: Example 2
+{pstd}Example 2: Setup
 
 {phang2}{stata sysuse nlsw88, clear}
 
