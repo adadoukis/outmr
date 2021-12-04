@@ -3,13 +3,13 @@
 // DO NOT FORGET to update the version of the package, if changed!
 // for more information visit http://github.com/haghish/github
 
-make outmr_pkg, replace toc pkg  version(1)                                  ///
+make outmr_pkg, replace toc pkg readme version(1)                            ///
      license("Academic Free License v3.0")                                   ///
      author("Aristeidis Dadoukis")                                           ///
      affiliation("")                                                         ///
      email("aristeidis.dadoukis@gmail.com")                                  ///
      url("")                                                                 ///
-     title("Export mrobust results to LaTex and Word")                       ///
+     title("Export mrobut restuls to LaTex and Word")                        ///
      description("")                                                         ///
      install("outmr.ado")                                                    ///
      iancillary("outmr.sthlp")                                              
