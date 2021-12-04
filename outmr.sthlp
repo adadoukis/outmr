@@ -109,7 +109,7 @@
 {title:Author}
 {p}
 
-Aristeidis Dadoukis, The University of Nottingham.
+Aristeidis Dadoukis, The University of Nottingham, Department of Finance Risk and Banking.
 
 Email {browse "mailto:aristeidis.dadoukis@gmail.com":aristeidis.dadoukis@gmail.com}
 

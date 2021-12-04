@@ -203,7 +203,7 @@ example[
  
 ]
 author[Aristeidis Dadoukis]
-institute[The University of Nottingham]
+institute[The University of Nottingham, Department of Finance Risk and Banking]
 email[aristeidis.dadoukis@gmail.com]
 
 
