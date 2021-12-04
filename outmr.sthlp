@@ -10,7 +10,7 @@
 {viewerjumpto "Examples" "outmr##examples"}{...}
 {title:Title}
 {phang}
-{bf:outmr} {hline 2} a command to give the parameters of the single stage Gehan design
+{bf:outmr} {hline 2} A command to export mrobust results into LaTex or Word
 
 {marker syntax}{...}
 {title:Syntax}
@@ -26,15 +26,15 @@
 {synoptline}
 
 {syntab:Optional}
-{synopt:{opt t:itle(string)}}  
+{synopt:{opt t:itle(string)}} Specifies the caption of the table.
 
-{synopt:{opt l:abel(string)}}  
+{synopt:{opt l:abel(string)}} Specifies the label of the table
 
-{synopt:{opt n:otes(string asis)}}  
+{synopt:{opt n:otes(string asis)}} Specifies the notes of the table
 
-{synopt:{opt coef:labels(string asis)}}  
+{synopt:{opt coef:labels(string asis)}} Specifies the format of the coefficient labels.  The current version of outmr is using the labels of each variable.  To include math notation in LaTex use \(\).
 
-{synopt:{opt d:ec(#)}}  Default value is 4.
+{synopt:{opt d:ec(#)}} Specifies the format of the coefficients.  The default is 4dp.
 
 {synopt:{opt rep:lace}} replace 
 
@@ -47,27 +47,26 @@
 {pstd}
 
 {pstd}
- {cmd:sampsi_gehan} calculates the sample sizes for the first and second stages of the Gehan design
-    (1961).
+ {cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.
 
 {marker options}{...}
 {title:Options}
 {dlgtab:Main}
 
 {phang}
-{opt t:itle(string)}  
+{opt t:itle(string)}  Specifies the caption of the table.
 
 {phang}
-{opt l:abel(string)}  
+{opt l:abel(string)}  Specifies the label of the table
 
 {phang}
-{opt n:otes(string asis)}  
+{opt n:otes(string asis)}  Specifies the notes of the table
 
 {phang}
-{opt coef:labels(string asis)}  
+{opt coef:labels(string asis)}  Specifies the format of the coefficient labels.  The current version of outmr is using the labels of each variable.  To include math notation in LaTex use \(\).
 
 {phang}
-{opt d:ec(#)}  
+{opt d:ec(#)}  Specifies the format of the coefficients.  The default is 4dp.
 
 {phang}
 {opt rep:lace} replace 
@@ -77,35 +76,50 @@
 {marker examples}{...}
 {title:Examples}
 
- {stata sampsi_gehan, p1(0.2) beta(0.05) se(0.1) precp(0.4)}
+{pstd}Setup: Example 1
 
+{phang2}{stata sysuse nlsw88, clear}
 
-{title:References}
-{pstd}
+{pstd}Execute mrobust 
 
-{pstd}
-Gehan, E.A. (1961) The Determination of the Number of Patients Required in a Preliminary and 
-Follow-Up Trial of a New Chemotherapeutic Agent. Journal of Chronic Diseases, 13, 346-353.
+{phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
 
-{pstd}
+{pstd}Export results to results.tex file
 
-{pstd}
+{phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) replace}
+ 
+{pstd}Setup: Example 
+
+{phang2}{stata sysuse nlsw88, clear}
+
+{pstd}Change the label of age to age_it 
+
+{phang2}{stata label var age "\(age_{it}\)"}
+
+{pstd}Execute mrobust 
+
+{phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
+
+{pstd}Export results to results.tex file using 3 decimal points
+
+{phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
+ 
 
 
 {title:Author}
 {p}
 
-Prof Adrian Mander, Cardiff University.
+Aristeidis Dadoukis, The University of Nottingham, Department of Finance Risk and Banking.
 
-Email {browse "mailto:mandera@cardiff.ac.uk":mandera@cardiff.ac.uk}
+Email {browse "mailto:aristeidis.dadoukis@gmail.com":aristeidis.dadoukis@gmail.com}
 
 
 
 {title:See Also}
 Related commands:
 
-{help sampsi_fleming} (if installed)  {stata ssc install sampsi_fleming} (to install this command)
+{help mrobust} (if installed) {stata ssc install mrobust, replace} (to install this command)
+{help texdoc}  (if installed) {stata ssc install texdoc, replace}  (to install this command)
 
-{help simon2stage} (if installed)   {stata ssc install simon2stage} (to install this command)
 
 
