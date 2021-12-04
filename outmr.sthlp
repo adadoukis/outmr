@@ -34,9 +34,9 @@
 
 {synopt:{opt coef:labels(string asis)}}  
 
-{synopt:{opt rep:lace}} replace 
-
 {synopt:{opt d:ec(#)}}  Default value is 4.
+
+{synopt:{opt rep:lace}} replace 
 
 {synoptline}
 {p2colreset}{...}
@@ -66,10 +66,10 @@
 {opt coef:labels(string asis)}  
 
 {phang}
-{opt rep:lace} replace 
+{opt d:ec(#)}  
 
 {phang}
-{opt d:ec(#)}  
+{opt rep:lace} replace 
 
 
 

@@ -8,7 +8,7 @@ program define outmr
 version 14 
 
 
-syntax [anything] [using] [, Title(string) Label(string) Notes(string asis) COEFlabels(string asis) REPlace Dec(int 4)] 
+syntax [anything] [using] [, Title(string) Label(string) Notes(string asis) COEFlabels(string asis) Dec(int 4) REPlace ] 
 // 
 	if missing(`dec')  {
 		local dp = 4
@@ -152,6 +152,7 @@ end
 
 
 
+
 /* START HELP FILE
 title[A command to export mrobust results into LaTex or Word]
 
@@ -159,6 +160,17 @@ desc[
  {cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.
 ]
 
+{marker options}{...}
+{title:Options}
+{phang}{opt title(string)} Specifies the caption of the table.
+
+{phang}{opt label(string)} Specifies the label of the table
+
+{phang}{opt notes(string)} Specifies the notes of the table
+
+{phang}{opt coeflabels(string)} Specifies the format of the coefficient labels.  The current version of outmr is using the labels of each variable.  To include math notation in LaTex use \(\).
+
+{phang}{opt dec(#)} Specifies the format of the coefficients.  The default is 4dp.
 
 example[
 {pstd}Setup: Example 1
