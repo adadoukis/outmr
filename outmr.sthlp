@@ -76,7 +76,7 @@
 {marker examples}{...}
 {title:Examples}
 
-{bf}{pstd}Setup: Example 1
+{bf}{pstd}Setup: Example 1{bf}
 
 {phang2}{stata sysuse nlsw88, clear}
 

@@ -167,7 +167,7 @@ opt[coeflabels(string)} Specifies the format of the coefficient labels.  The cur
 opt[dec(#)} Specifies the format of the coefficients.  The default is 4dp.]
 
 example[
-{bf}{pstd}Setup: Example 1
+{bf}{pstd}Setup: Example 1{bf}
 
 {phang2}{stata sysuse nlsw88, clear}
 
