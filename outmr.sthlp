@@ -10,7 +10,7 @@
 {viewerjumpto "Examples" "outmr##examples"}{...}
 {title:Title}
 {phang}
-{bf:outmr} {hline 2} A command to export mrobust results into LaTex or Word
+{bf:outmr} {hline 2} a command to give the parameters of the single stage Gehan design
 
 {marker syntax}{...}
 {title:Syntax}
@@ -47,7 +47,8 @@
 {pstd}
 
 {pstd}
- {cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.
+ {cmd:sampsi_gehan} calculates the sample sizes for the first and second stages of the Gehan design
+    (1961).
 
 {marker options}{...}
 {title:Options}
@@ -76,50 +77,35 @@
 {marker examples}{...}
 {title:Examples}
 
-{pstd}Setup: Example 1
+ {stata sampsi_gehan, p1(0.2) beta(0.05) se(0.1) precp(0.4)}
 
-{phang2}{stata sysuse nlsw88, clear}
 
-{pstd}Execute mrobust 
+{title:References}
+{pstd}
 
-{phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
+{pstd}
+Gehan, E.A. (1961) The Determination of the Number of Patients Required in a Preliminary and 
+Follow-Up Trial of a New Chemotherapeutic Agent. Journal of Chronic Diseases, 13, 346-353.
 
-{pstd}Export results to results.tex file
+{pstd}
 
-{phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) replace}
- 
-{pstd}Setup: Example 
-
-{phang2}{stata sysuse nlsw88, clear}
-
-{pstd}Change the label of age to age_it 
-
-{phang2}{stata label var age "\(age_{it}\)"}
-
-{pstd}Execute mrobust 
-
-{phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
-
-{pstd}Export results to results.tex file using 3 decimal points
-
-{phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
- 
+{pstd}
 
 
 {title:Author}
 {p}
 
-Aristeidis Dadoukis, The University of Nottingham, Department of Finance Risk and Banking.
+Prof Adrian Mander, Cardiff University.
 
-Email {browse "mailto:aristeidis.dadoukis@gmail.com":aristeidis.dadoukis@gmail.com}
+Email {browse "mailto:mandera@cardiff.ac.uk":mandera@cardiff.ac.uk}
 
 
 
 {title:See Also}
 Related commands:
 
-{help mrobust} (if installed) {stata ssc install mrobust, replace} (to install this command)
-{help texdoc}  (if installed) {stata ssc install texdoc, replace}  (to install this command)
+{help sampsi_fleming} (if installed)  {stata ssc install sampsi_fleming} (to install this command)
 
+{help simon2stage} (if installed)   {stata ssc install simon2stage} (to install this command)
 
 

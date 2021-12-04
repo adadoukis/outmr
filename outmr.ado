@@ -149,68 +149,52 @@ texdoc close
 
 }
 end 
-
-
-
-
 /* START HELP FILE
-title[A command to export mrobust results into LaTex or Word]
+title[a command to give the parameters of the single stage Gehan design]
 
 desc[
- {cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.
+ {cmd:sampsi_gehan} calculates the sample sizes for the first and second stages of the Gehan design
+    (1961).
 ]
+opt[beta() specifies the first stage maximum probability of seeing no responses.]
+opt[p1() specifies the desired probability of response.]
+opt[se()  specifies the desired standard error in the second stage.]
+opt[start() specifies the smallest n to start the search from.]
+opt[precp() specifies the probability used in the standard error formula.]
 
-[opt title(string)} Specifies the caption of the table.]
 
-[opt label(string)} Specifies the label of the table]
-
-[opt notes(string)} Specifies the notes of the table]
-
-[opt coeflabels(string)} Specifies the format of the coefficient labels.  The current version of outmr is using the labels of each variable.  To include math notation in LaTex use \(\).]
-
-[opt dec(#)} Specifies the format of the coefficients.  The default is 4dp.]
+opt2[precp() specifies the probability used in the standard error formula.
+and I wanted more than one line for the longer  descriptions of the
+option precp() later in the help file]
 
 example[
-{pstd}Setup: Example 1
-
-{phang2}{stata sysuse nlsw88, clear}
-
-{pstd}Execute mrobust 
-
-{phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
-
-{pstd}Export results to results.tex file
-
-{phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) replace}
- 
-{pstd}Setup: Example 
-
-{phang2}{stata sysuse nlsw88, clear}
-
-{pstd}Change the label of age to age_it 
-
-{phang2}{stata label var age "\(age_{it}\)"}
-
-{pstd}Execute mrobust 
-
-{phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
-
-{pstd}Export results to results.tex file using 3 decimal points
-
-{phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
- 
+ {stata sampsi_gehan, p1(0.2) beta(0.05) se(0.1) precp(0.4)}
 ]
-author[Aristeidis Dadoukis]
-institute[The University of Nottingham, Department of Finance Risk and Banking]
-email[aristeidis.dadoukis@gmail.com]
+author[Prof Adrian Mander]
+institute[Cardiff University]
+email[mandera@cardiff.ac.uk]
 
+return[n1 The first stage sample size]
+return[p1 The interesting p1 ]
+return[beta The type 2 error]
+return[se Standard error]
+return[n2 The second stage sample size]
 
+freetext[]
+
+references[
+Gehan, E.A. (1961) The Determination of the Number of Patients Required in a Preliminary and 
+Follow-Up Trial of a New Chemotherapeutic Agent. Journal of Chronic Diseases, 13, 346-353.
+]
 
 seealso[
-{help mrobust} (if installed) {stata ssc install mrobust, replace} (to install this command)
-{help texdoc}  (if installed) {stata ssc install texdoc, replace}  (to install this command)
+{help sampsi_fleming} (if installed)  {stata ssc install sampsi_fleming} (to install this command)
 
+{help simon2stage} (if installed)   {stata ssc install simon2stage} (to install this command)
 
 ]
 
 END HELP FILE */
+
+
+
