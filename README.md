@@ -1,7 +1,7 @@
 _v. 1_  
 
-`outmr_pkg` : Export mrobut restuls to LaTex and Word
-=====================================================
+`outmr_pkg` : Export results to LaTex and Word
+==============================================
 
 
 ### License

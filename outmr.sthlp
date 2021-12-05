@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 1.0  4 Dec 2021}{...}
+{* *! version 1.0  5 Dec 2021}{...}
 {vieweralsosee "" "--"}{...}
 {vieweralsosee "Install command2" "ssc install command2"}{...}
 {vieweralsosee "Help command2 (if installed)" "help command2"}{...}
@@ -109,7 +109,7 @@
 {title:Author}
 {p}
 
-Aristeidis Dadoukis, The University of Nottingham, Department of Finance Risk and Banking.
+Aristeidis Dadoukis, The University of Nottingham, Nottingham University Business School..
 
 Email {browse "mailto:aristeidis.dadoukis@gmail.com":aristeidis.dadoukis@gmail.com}
 

@@ -197,7 +197,7 @@ example[
  
 ]
 author[Aristeidis Dadoukis]
-institute[The University of Nottingham, Department of Finance Risk and Banking]
+institute[The University of Nottingham, Nottingham University Business School.]
 email[aristeidis.dadoukis@gmail.com]
 
 

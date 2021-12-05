@@ -9,7 +9,7 @@ make outmr_pkg, replace toc pkg readme version(1)                            ///
      affiliation("")                                                         ///
      email("aristeidis.dadoukis@gmail.com")                                  ///
      url("")                                                                 ///
-     title("Export mrobut restuls to LaTex and Word")                        ///
+     title("Export results to LaTex and Word")                               ///
      description("")                                                         ///
-     install("outmr.ado")                                                    ///
-     iancillary("outmr.sthlp")                                              
+     install("outmr.ado;outmr.sthlp")                                        ///
+     iancillary("")                                                         
