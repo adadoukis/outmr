@@ -103,13 +103,12 @@
 {pstd}Export results to results.tex file using 3 decimal points
 
 {phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
- 
 
 
 {title:Author}
 {p}
 
-Aristeidis Dadoukis, The University of Nottingham, Nottingham University Business School..
+Aristeidis Dadoukis, The University of Nottingham, Nottingham University Business School.
 
 Email {browse "mailto:aristeidis.dadoukis@gmail.com":aristeidis.dadoukis@gmail.com}
 
@@ -120,6 +119,4 @@ Related commands:
 
 {help mrobust} (if installed) {stata ssc install mrobust, replace} (to install this command)
 {help texdoc}  (if installed) {stata ssc install texdoc, replace}  (to install this command)
-
-
 

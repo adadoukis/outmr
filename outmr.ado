@@ -194,10 +194,9 @@ example[
 {pstd}Export results to results.tex file using 3 decimal points
 
 {phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
- 
 ]
 author[Aristeidis Dadoukis]
-institute[The University of Nottingham, Nottingham University Business School.]
+institute[The University of Nottingham, Nottingham University Business School]
 email[aristeidis.dadoukis@gmail.com]
 
 
@@ -205,8 +204,6 @@ email[aristeidis.dadoukis@gmail.com]
 seealso[
 {help mrobust} (if installed) {stata ssc install mrobust, replace} (to install this command)
 {help texdoc}  (if installed) {stata ssc install texdoc, replace}  (to install this command)
-
-
 ]
 
 END HELP FILE */
