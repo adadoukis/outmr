@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 1.0  5 Dec 2021}{...}
+{* *! version 1.0  7 Dec 2021}{...}
 {vieweralsosee "" "--"}{...}
 {vieweralsosee "Install command2" "ssc install command2"}{...}
 {vieweralsosee "Help command2 (if installed)" "help command2"}{...}
@@ -47,7 +47,7 @@
 {pstd}
 
 {pstd}
- {cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.  This command relies heaviliy on texdox.
+ {cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.  The current version of outmr relies heaviliy on texdoc
 
 {marker options}{...}
 {title:Options}
@@ -108,7 +108,7 @@
 {title:Author}
 {p}
 
-Aristeidis Dadoukis, The University of Nottingham, Nottingham University Business School. Department of Finance, Risk and Banking
+Aristeidis Dadoukis, The University of Nottingham, Nottingham University Business School.
 
 Email {browse "mailto:aristeidis.dadoukis@gmail.com":aristeidis.dadoukis@gmail.com}
 
