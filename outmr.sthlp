@@ -108,7 +108,7 @@
 {title:Author}
 {p}
 
-Aristeidis Dadoukis, The University of Nottingham, Nottingham University Business School.
+Aristeidis Dadoukis, The University of Nottingham, Nottingham University Business School Department of Finance, Risk and Banking.
 
 Email {browse "mailto:aristeidis.dadoukis@gmail.com":aristeidis.dadoukis@gmail.com}
 
