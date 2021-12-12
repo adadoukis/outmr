@@ -87,13 +87,13 @@
  
 {pstd}Example 2: Label the variable age to age_it, before the estimation of {it:mrobust}, and export the results to results.tex file using 3 decimal points. {p_end}
 
-{phang2}{stata sysuse nlsw88, clear}
+{phang2}{cmd: sysuse nlsw88, clear}
 
-{phang2}{stata "label var age "\( age_{c -(}it{c )-} \)" "}
+{phang2}{cmd: label var age "\( age_{c -(}it{c )-} \)"}
 
-{phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
+{phang2}{cmd: mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
 
-{phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
+{phang2}{cmd: outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
 
 {title:Author}
 {p}
