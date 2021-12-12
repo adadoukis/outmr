@@ -94,9 +94,9 @@
 
 {pstd}Change the label of age to age_it 
 
-{phang2}{stata label var age "\(age_{c -(}}itc -(}}}\)"
+{phang2}{stata label var age "\(age_{c -(}}it}\)"
 
-{pstd}Execute mrobust updated
+{pstd}Execute mrobust
 
 {phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
 
