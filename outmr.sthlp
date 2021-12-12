@@ -76,7 +76,7 @@
 {marker examples}{...}
 {title:Examples}
 
-{pstd}Example 1: Estimate model uncertaining using {it:mrobust}, and export the results to results.tex file
+{pstd}Example 1: Estimate model uncertaining using {it:mrobust}, and export the results to results.tex file {p_end}
 
 {phang2}{stata sysuse nlsw88, clear}
 
@@ -85,7 +85,7 @@
 {phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) replace}
 
  
-{pstd}Example 2: Label the variable age to age_it, before the estimation of {it:mrobust}, and export the results to results.tex file using 3 decimal points
+{pstd}Example 2: Label the variable age to age_it, before the estimation of {it:mrobust}, and export the results to results.tex file using 3 decimal points {p_end}
 
 {phang2}{stata sysuse nlsw88, clear}
 
@@ -95,14 +95,15 @@
 
 {phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
 
-{pstd}Example 3: Export results and change the label of one variable
-
-{cmd}
-    {stata use http://fmwww.bc.edu/ec-p/data/wooldridge2k/cornwell.dta, clear}
-    {stata gen lncrmrte=ln(crmrte)}
-	{stata label var lncrmrte "age_{c -(}it{c -)}"}
-    {stata xi: regress lncrmrte prbarr prbconv prbpris avgsen}
-{txt}{...}
+{pstd}We will consider the dynamic effect of union status on income. 
+We first generate these relative time indicators, and leave out the distant leads due to few observations.  
+Implicitly this assumes that effects outside the lead windows are zero.  {p_end}
+	{cmd:forvalues k = 18(-1)2 {c -(}}
+	{cmd:   gen g_`k' = ry == -`k'}
+	{cmd:{c )-}}
+	{cmd:forvalues k = 0/18 {c -(}}
+	{cmd:     gen g`k' = ry == `k'}
+	{cmd:{c )-}}
 
 {title:Author}
 {p}
