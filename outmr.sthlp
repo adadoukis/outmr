@@ -107,10 +107,10 @@
 {pstd}Example 3: Export results and change the label of one variable
 
 {cmd}
-    {stata "use http://fmwww.bc.edu/ec-p/data/wooldridge2k/cornwell.dta, clear"}
-    {stata "gen lncrmrte=ln(crmrte)"}
-	{stata "label var lncrmrte "age_{it}""}
-    . {stata "xi: regress lncrmrte prbarr prbconv prbpris avgsen"}
+    {stata use http://fmwww.bc.edu/ec-p/data/wooldridge2k/cornwell.dta, clear}
+    {stata gen lncrmrte=ln(crmrte)}
+	{stata label var lncrmrte "age_{it}"}
+    {stata xi: regress lncrmrte prbarr prbconv prbpris avgsen}
 {txt}{...}
 
 {title:Author}
