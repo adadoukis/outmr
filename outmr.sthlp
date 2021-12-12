@@ -104,6 +104,8 @@
 
 {phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
 
+{pstd}Example 3: Export results and change the label of one variable
+
 {cmd}
     {stata "use http://fmwww.bc.edu/ec-p/data/wooldridge2k/cornwell.dta, clear"}
     {stata "gen lncrmrte=ln(crmrte)"}
