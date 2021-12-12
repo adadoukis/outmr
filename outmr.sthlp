@@ -89,7 +89,7 @@
 
 {phang2}{stata sysuse nlsw88, clear}
 
-{phang2}{stata label var age "\(age_{c -(}it{c -)}\)"}
+{phang2}{stata label var age "\( age_{c -(}it{c -(} \)"}
 
 {phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
 
