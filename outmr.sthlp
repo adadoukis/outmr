@@ -32,7 +32,7 @@
 
 {synopt:{opt n:otes(string asis)}} Specifies the notes of the table
 
-{synopt:{opt coef:labels(string asis)}} Specifies the format of the coefficient labels.  The current version of outmr is using the labels of each variable.  To include math notation in LaTex use \(\).
+{synopt:{opt coef:labels(string asis)}} Specifies the format of the coefficient labels.  The current version of outmr is using the labels of each variable.  To include math notation in LaTex use \( \).
 
 {synopt:{opt d:ec(#)}} Specifies the format of the coefficients.  The default is 4dp.
 
@@ -94,16 +94,6 @@
 {phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
 
 {phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
-
-{pstd}We will consider the dynamic effect of union status on income. 
-We first generate these relative time indicators, and leave out the distant leads due to few observations.  
-Implicitly this assumes that effects outside the lead windows are zero.  {p_end}
-	{cmd:forvalues k = 18(-1)2 {c -(}}
-	{cmd:   gen g_`k' = ry == -`k'}
-	{cmd:{c )-}}
-	{cmd:forvalues k = 0/18 {c -(}}
-	{cmd:     gen g`k' = ry == `k'}
-	{cmd:{c )-}}
 
 {title:Author}
 {p}
