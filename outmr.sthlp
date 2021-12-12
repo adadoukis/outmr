@@ -28,15 +28,15 @@
 {syntab:Optional}
 {synopt:{opt t:itle(string)}} Specifies the caption of the table.
 
-{synopt:{opt l:abel(string)}} Specifies the label of the table
+{synopt:{opt l:abel(string)}} Specifies the label of the table.
 
-{synopt:{opt n:otes(string asis)}} Specifies the notes of the table
+{synopt:{opt n:otes(string asis)}} Specifies the notes of the table.
 
 {synopt:{opt coef:labels(string asis)}} Specifies the format of the coefficient labels.  The current version of outmr is using the labels of each variable.  To include math notation in LaTex use \( \).
 
 {synopt:{opt d:ec(#)}} Specifies the format of the coefficients.  The default is 4dp.
 
-{synopt:{opt rep:lace}} replace 
+{synopt:{opt rep:lace}} replace the extisting file.
 
 {synoptline}
 {p2colreset}{...}
@@ -47,7 +47,7 @@
 {pstd}
 
 {pstd}
- {cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.  The current version of {it:outmr} relies heaviliy on texdoc
+ {cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.  The current version of {it:outmr} relies heaviliy on texdoc. {p_end}
 
 {marker options}{...}
 {title:Options}
