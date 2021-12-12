@@ -109,7 +109,7 @@
 {cmd}
     {stata use http://fmwww.bc.edu/ec-p/data/wooldridge2k/cornwell.dta, clear}
     {stata gen lncrmrte=ln(crmrte)}
-	{stata label var lncrmrte "age_{it}"}
+	{stata label var lncrmrte "age_{c -(}it{c -)}"}
     {stata xi: regress lncrmrte prbarr prbconv prbpris avgsen}
 {txt}{...}
 
