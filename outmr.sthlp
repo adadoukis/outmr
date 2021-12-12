@@ -105,8 +105,9 @@
 {phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
 
 {cmd}
-    . {stata "use http://fmwww.bc.edu/ec-p/data/wooldridge2k/cornwell.dta, clear"}
-    . {stata "gen lncrmrte=ln(crmrte)"}
+    {stata "use http://fmwww.bc.edu/ec-p/data/wooldridge2k/cornwell.dta, clear"}
+    {stata "gen lncrmrte=ln(crmrte)"}
+	{stata "label var lncrmrte "age_{it}" "}
     . {stata "xi: regress lncrmrte prbarr prbconv prbpris avgsen"}
 {txt}{...}
 
