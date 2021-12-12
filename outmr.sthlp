@@ -69,7 +69,7 @@
 {opt d:ec(#)}  Specifies the format of the coefficients.  The default is 4dp.
 
 {phang}
-{opt rep:lace} replace 
+{opt rep:lace} replace the extisting file.
 
 
 
