@@ -57,13 +57,13 @@
 {opt t:itle(string)}  Specifies the caption of the table.
 
 {phang}
-{opt l:abel(string)}  Specifies the label of the table
+{opt l:abel(string)}  Specifies the label of the table.
 
 {phang}
-{opt n:otes(string asis)}  Specifies the notes of the table
+{opt n:otes(string asis)}  Specifies the notes of the table.
 
 {phang}
-{opt coef:labels(string asis)}  Specifies the format of the coefficient labels.  The current version of {it:outmr} is using the labels of each variable.  To include math notation in LaTex use \(\).
+{opt coef:labels(string asis)}  Specifies the format of the coefficient labels.  The current version of {it:outmr} is using the labels of each variable.  To include math notation in LaTex use \( \).
 
 {phang}
 {opt d:ec(#)}  Specifies the format of the coefficients.  The default is 4dp.
@@ -76,7 +76,7 @@
 {marker examples}{...}
 {title:Examples}
 
-{pstd}Example 1: Estimate model uncertaining using {it:mrobust}, and export the results to results.tex file {p_end}
+{pstd}Example 1: Estimate model uncertaining using {it:mrobust}, and export the results to results.tex file. {p_end}
 
 {phang2}{stata sysuse nlsw88, clear}
 
@@ -85,7 +85,7 @@
 {phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) replace}
 
  
-{pstd}Example 2: Label the variable age to age_it, before the estimation of {it:mrobust}, and export the results to results.tex file using 3 decimal points {p_end}
+{pstd}Example 2: Label the variable age to age_it, before the estimation of {it:mrobust}, and export the results to results.tex file using 3 decimal points. {p_end}
 
 {phang2}{stata sysuse nlsw88, clear}
 
