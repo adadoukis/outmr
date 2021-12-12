@@ -63,7 +63,7 @@
 {opt n:otes(string asis)}  Specifies the notes of the table
 
 {phang}
-{opt coef:labels(string asis)}  Specifies the format of the coefficient labels.  The current version of outmr is using the labels of each variable.  To include math notation in LaTex use \(\).
+{opt coef:labels(string asis)}  Specifies the format of the coefficient labels.  The current version of {it:outmr} is using the labels of each variable.  To include math notation in LaTex use \(\).
 
 {phang}
 {opt d:ec(#)}  Specifies the format of the coefficients.  The default is 4dp.
