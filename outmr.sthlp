@@ -76,36 +76,19 @@
 {marker examples}{...}
 {title:Examples}
 
-{pstd}Example 1: Setup
-
+{pstd}Example 1: Estimate model uncertaining using {it:mrobust}, and export the results to results.tex file
 {phang2}{stata sysuse nlsw88, clear}
-
-{pstd}Execute mrobust 
-
 {phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
-
-{pstd}Export results to results.tex file
-
 {phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) replace}
+
  
-{pstd}Example 2: Setup
-
+{pstd}Example 2: Label the variable age to age_it, before the estimation of {it:mrobust}, and export the results to results.tex file using 3 decimal points
 {phang2}{stata sysuse nlsw88, clear}
-
-{pstd}Change the label of age to age_it 
-
 {phang2}{stata label var age "\(age_{c -(}it{c -)}\)"}
-
-{pstd}Execute mrobust
-
 {phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
-
-{pstd}Export results to results.tex file using 3 decimal points
-
 {phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
 
 {pstd}Example 3: Export results and change the label of one variable
-
 {cmd}
     {stata use http://fmwww.bc.edu/ec-p/data/wooldridge2k/cornwell.dta, clear}
     {stata gen lncrmrte=ln(crmrte)}
