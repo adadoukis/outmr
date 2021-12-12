@@ -107,16 +107,10 @@
 {space 8}{hline 27} {it:example do-file content} {hline 27}
 {cmd}{...}
 {* example_start - interval_0_0}{...}
-	sysuse auto, clear
-	rangestat (min) price mpg (mean) price mpg, interval(rep78 0 0)
+	sysuse nlsw88, clear
+	label var age "\(age_{it}\)"
+	outmr using results.tex, title(Add this title to the table) notes(This is a note) replace
 	
-	* redo using egen functions
-	sort rep78 make
-	by rep78: egen min_price = min(price)
-	by rep78: egen min_mpg   = min(mpg)
-	by rep78: egen mean_price = mean(price)
-	by rep78: egen mean_mpg   = mean(mpg)
-	list rep78 *price* *mpg* if rep78 <= 2, sepby(rep78)
 {* example_end}{...}
 {txt}{...}
 {space 8}{hline 80}
