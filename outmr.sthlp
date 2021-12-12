@@ -94,9 +94,9 @@
 
 {pstd}Change the label of age to age_it 
 
-{phang2}{stata "label var age "\(age_{it}\)""}
+{phang2}{stata label var age "\(age_{it}\)"}
 
-{pstd}Execute mrobust and save the results using {it:outmr}
+{pstd}Execute mrobust
 
 {phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
 
@@ -104,6 +104,11 @@
 
 {phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
 
+{cmd}
+    . {stata "use http://fmwww.bc.edu/ec-p/data/wooldridge2k/cornwell.dta, clear"}
+    . {stata "gen lncrmrte=ln(crmrte)"}
+    . {stata "xi: regress lncrmrte prbarr prbconv prbpris avgsen"}
+{txt}{...}
 
 {title:Author}
 {p}
