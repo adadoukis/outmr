@@ -104,9 +104,9 @@
 
 {phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
 
-{space 8}{hline 27} {it:example do-file content} {hline 27}
+{space 8}{hline 27} {it:example 2 do-file content} {hline 27}
 {cmd}{...}
-{* example_start - interval_0_0}{...}
+{* example_start - label_var}{...}
 	sysuse nlsw88, clear
 	label var age "\(age_{it}\)"
 	outmr using results.tex, title(Add this title to the table) notes(This is a note) replace
@@ -114,7 +114,7 @@
 {* example_end}{...}
 {txt}{...}
 {space 8}{hline 80}
-{space 8}{it:({stata rangestat_run interval_0_0 using rangestat.sthlp:click to run})}
+{space 8}{it:({stata outmr_run label_var using outmr.sthlp:click to run})}
 
 {title:Author}
 {p}
