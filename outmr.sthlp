@@ -96,7 +96,7 @@
 
 {phang2}{stata label var age "\(age_{c -(}}itc -(}}}\)"
 
-{pstd}Execute mrobust 
+{pstd}Execute mrobust updated
 
 {phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
 
