@@ -94,7 +94,7 @@
 
 {pstd}Change the label of age to age_it 
 
-{phang2}{stata label var age "\(age_{c -(}}it}c -(}}\)"}
+{phang2}{stata label var age "\(age_{c -(}}it}c -(}}\)"
 
 {pstd}Execute mrobust 
 
