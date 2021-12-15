@@ -95,6 +95,8 @@
 
 {phang2}{cmd: outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
 
+
+
 {pstd}Example 3: Estimate model uncertainty using {it:mrobust}, and export the results to results.docx. {p_end}
 
 {phang2}{cmd: sysuse nlsw88, clear}
