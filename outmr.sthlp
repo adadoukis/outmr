@@ -98,7 +98,9 @@
 {pstd}Example 3: Estimat model uncertainty using {it:mrobust}, and export the results to results.docx. {p_end}
 
 {phang2}{cmd: sysuse nlsw88, clear}
+
 {phang2}{cmd: mrobust regress union hours age grade , noplot}
+
 {phang2}{cmd: outmr using results.docx, title(This is a table created in word) notes(This is a note) replace}
 
 {title:Author}
