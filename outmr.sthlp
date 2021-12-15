@@ -47,7 +47,7 @@
 {pstd}
 
 {pstd}
- {cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.  The current version of {it:outmr} relies heaviliy on texdoc. {p_end}
+ {cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.  The current version of {it:outmr} relies heaviliy on texdoc and putdoxc. {p_end}
 
 {marker options}{...}
 {title:Options}
@@ -76,7 +76,7 @@
 {marker examples}{...}
 {title:Examples}
 
-{pstd}Example 1: Estimate model uncertaining using {it:mrobust}, and export the results to results.tex file. {p_end}
+{pstd}Example 1: Estimate model uncertaining using {it:mrobust}, and export the results to results.tex. {p_end}
 
 {phang2}{cmd: sysuse nlsw88, clear}
 
@@ -95,6 +95,12 @@
 
 {phang2}{cmd: outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
 
+{pstd}Example 3: Estimat model uncertainty using {it:mrobust}, and export the results to results.docx. {p_end}
+
+{phang2}{cmd: sysuse nlsw88, clear}
+{phang2}{cmd: mrobust regress union hours age grade , noplot}
+{phang2}{cmd: outmr using results.docx, title(This is a table created in word) notes(This is a note) replace}
+
 {title:Author}
 {p}
 
@@ -109,4 +115,4 @@ Related commands:
 
 {help mrobust} (if installed) {stata ssc install mrobust, replace} (to install this command)
 {help texdoc}  (if installed) {stata ssc install texdoc, replace}  (to install this command)
-
+{help putdox} {if installed}
