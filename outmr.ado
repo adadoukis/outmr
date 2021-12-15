@@ -1,5 +1,3 @@
-
-
 // mrobust_export v1 - 02-12-2021
 // A. Dadoukis
 
@@ -96,11 +94,13 @@ gettoken path using0: using
 		if "`mode'"== "docx" {
 			//di as error "Word is not supported yet"
 			putdocx clear
-			putdocx begin, pagesize(A4) font(times new roman, "12") 
-			putdocx paragraph, halign(left)
+			putdocx begin, pagesize(A4) font(times new roman, "12")  
+			putdocx paragraph, halign(center)
+			putdocx table tbl = (25,5), title(`tex_title') note(`notes') border(all, nil)
+			putdocx table tbl(2,1)=("Panel A: `model' "), halign(left) colspan(5)  border(top)  border(bottom) italic
+			putdocx table tbl(3,1)=("Variable of interest"), halign(left) 
+			putdocx table tbl(4,1)=("Outcome variable"), halign(left)
 			
-			putdocx table tbl = (1,5), title(`tex_title') note(`notes')
-			putdocx table tbl(1,1)=("Panel A; "), halign(right) colspan(2) border(top)
 			putdocx save "`fn'", replace
 
 			
@@ -158,65 +158,4 @@ tex \end{table}
 texdoc close			
 
 }
-end  
-
-/* START HELP FILE
-title[A command to export mrobust results into LaTex or Word]
-
-desc[
- {cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.
-]
-
-opt[title(string)} Specifies the caption of the table.]
-
-opt[label(string)} Specifies the label of the table]
-
-opt[notes(string)} Specifies the notes of the table]
-
-opt[coeflabels(string)} Specifies the format of the coefficient labels.  The current version of outmr is using the labels of each variable.  To include math notation in LaTex use \(\).]
-
-opt[dec(#)} Specifies the format of the coefficients.  The default is 4dp.]
-
-example[
-{pstd}Example 1: Setup
-
-{phang2}{stata sysuse nlsw88, clear}
-
-{pstd}Execute mrobust 
-
-{phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
-
-{pstd}Export results to results.tex file
-
-{phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) replace}
- 
-{pstd}Example 2: Setup
-
-{phang2}{stata sysuse nlsw88, clear}
-
-{pstd}Change the label of age to age_it 
-
-{phang2}{stata label var age "\(age_{it}\)"}
-
-{pstd}Execute mrobust 
-
-{phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
-
-{pstd}Export results to results.tex file using 3 decimal points
-
-{phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
-]
-author[Aristeidis Dadoukis]
-institute[The University of Nottingham, Nottingham University Business School]
-email[aristeidis.dadoukis@gmail.com]
-
-
-
-seealso[
-{help mrobust} (if installed) {stata ssc install mrobust, replace} (to install this command)
-{help texdoc}  (if installed) {stata ssc install texdoc, replace}  (to install this command)
-]
-
-END HELP FILE */
-
-
+end 
