@@ -85,15 +85,25 @@ gettoken path using0: using
     }
 
 		if `"`suffix'"' == ".tex"			local mode tex
-		else if `"`suffix'"' == ".rtf"		local mode rtf
+		else if `"`suffix'"' == "docx"		local mode docx
 		
-		else if `"`suffix'"'!=".tex" | `"`suffix'"'!=".rtf" { 
-			di as error "The current version supports word (.rtf) or LaTex (.tex)"
+		else if `"`suffix'"'!=".tex" | `"`suffix'"'!="docx" { 
+			di as error "The current version supports word (.docx) or LaTex (.tex)"
+			di as error "`suffix'"
 			exit 198 
 		}		
 
-		if "`mode'"== "rtf" {
-			di as error "Word is not supported yet"
+		if "`mode'"== "docx" {
+			//di as error "Word is not supported yet"
+			putdocx clear
+			putdocx begin, pagesize(A4) font(times new roman, "12") 
+			putdocx paragraph, halign(left)
+			
+			putdocx table tbl = (1,5), title(`tex_title') note(`notes')
+			putdocx table tbl(1,1)=("Panel A; "), halign(right) colspan(2) border(top)
+			putdocx save "`fn'", replace
+
+			
 		}
 			else if "`mode'" == "tex" {
 				
@@ -106,7 +116,7 @@ tex \label{`tex_label'}
 
 tex \begin{tabular}{p{2.2in}p{0.8in}p{1.6in}p{0.8in}p{0.8in}}
 tex \toprule
-tex \multicolumn{5}{l}{\textit{\textbf{Panel A: Linear regression}}} \\ \hline 
+tex \multicolumn{5}{l}{\textit{\textbf{Panel A: `model'}}} \\ \hline 
  
 tex \addlinespace
 tex Variable of interest        	& `interest'           & \multicolumn{2}{l}{} 										\\
@@ -148,7 +158,8 @@ tex \end{table}
 texdoc close			
 
 }
-end 
+end  
+
 /* START HELP FILE
 title[A command to export mrobust results into LaTex or Word]
 
