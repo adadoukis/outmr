@@ -93,17 +93,90 @@ gettoken path using0: using
 
 		if "`mode'"== "docx" {
 			//di as error "Word is not supported yet"
+			local rows = (`n_terms'+17)
 			putdocx clear
 			putdocx begin, pagesize(A4) font(times new roman, "12")  
 			putdocx paragraph, halign(center)
-			putdocx table tbl = (25,5), title(`tex_title') note(`notes') border(all, nil)
-			putdocx table tbl(2,1)=("Panel A: `model' "), halign(left) colspan(5)  border(top)  border(bottom) italic
+			putdocx table tbl = (`rows',5), title(`tex_title') note(`notes') border(all, nil)
+			putdocx table tbl(2,1)=("Panel A: `model'"), halign(left) colspan(5)  border(top)  border(bottom) italic bold
+			putdocx table tbl(7,1)=("Panel B: Robustness Statistics"), halign(left) colspan(2)  border(top)  border(bottom) italic bold
+			putdocx table tbl(7,3)=("Significance Testing"), halign(left) colspan(2)  border(top)  border(bottom) italic bold
+			putdocx table tbl(13,1)=("Panel C: Model Influence"), halign(left) colspan(5)  border(top)  border(bottom) italic bold
+			
+			putdocx table tbl(14,2)=("Marginal Effect of Variable Inclusion"), halign(center) colspan(2)
+			putdocx table tbl(14,3)=("Percent Change from Mean (b)"), halign(center) colspan(2)
+			
 			putdocx table tbl(3,1)=("Variable of interest"), halign(left) 
+			putdocx table tbl(3,2)=("`interest' "), halign(left) 
+			
 			putdocx table tbl(4,1)=("Outcome variable"), halign(left)
-			
-			putdocx save "`fn'", replace
+			putdocx table tbl(4,2)=("`outcome' "), halign(left)
 
+			putdocx table tbl(5,1)=("Possible control terms"), halign(left)
+			putdocx table tbl(5,2)=("`n_terms'"), halign(left)
 			
+			putdocx table tbl(6,1)=("Number of models"), halign(left)
+			putdocx table tbl(6,2)=("`no_models'"), halign(left)
+			
+			putdocx table tbl(8,1)=("Mean (b)"), halign(left)  
+			putdocx table tbl(8,2)=("`mean_b'"), halign(left)
+			
+			putdocx table tbl(9,1)=("Sampling SE"), halign(left)
+			putdocx table tbl(9,2)=("`samplingSE'"), halign(left)
+			
+			putdocx table tbl(10,1)=("Modelling SE"), halign(left)
+			putdocx table tbl(10,2)=("`modelingSE'"), halign(left)
+			
+			putdocx table tbl(11,1)=("Total SE"), halign(left)
+			putdocx table tbl(11,2)=("`totalSE'"), halign(left)
+			
+			putdocx table tbl(12,1)=("Robustness ratio:"), halign(left)
+			putdocx table tbl(12,2)=("`rob_ratio'"), halign(left)
+			
+			putdocx table tbl(4,4)=("Observations"), halign(left)
+			putdocx table tbl(4,5)=("`obs'"), halign(right)
+
+			putdocx table tbl(5,4)=("Mean R-squared"), halign(left)
+			putdocx table tbl(5,5)=("`meanR2'"), halign(right)
+			
+			putdocx table tbl(6,4)=("Multicollinearity"), halign(left)
+			putdocx table tbl(6,5)=("`mc'"), halign(right)
+
+			putdocx table tbl(8,4)=("Sign stability"), halign(left)  
+			putdocx table tbl(8,5)=("`sign_stability'%"), halign(left)
+		
+			putdocx table tbl(9,4)=("Significance rate"), halign(left)  
+			putdocx table tbl(9,5)=("`sig_rate'%"), halign(left)
+			
+			putdocx table tbl(9,4)=("Positive"), halign(left)  
+			putdocx table tbl(9,5)=("`positive'%"), halign(left)
+
+			putdocx table tbl(10,4)=("Positive and significant"), halign(left)  
+			putdocx table tbl(10,5)=("`pos_and_sig'%"), halign(left)
+
+			putdocx table tbl(11,4)=("Negative"), halign(left)  
+			putdocx table tbl(11,5)=("`negative'%"), halign(left)
+
+			putdocx table tbl(12,4)=("Negative and significant"), halign(left)  
+			putdocx table tbl(12,5)=("`neg_and_sig'%"), halign(left)
+			local row = 15
+			forvalues j = 1/`n_terms' {	
+				putdocx table tbl(`row',1)=("`l_`j''"), halign(left)
+				putdocx table tbl(`row',2)=("`b_`j''"), halign(center) colspan(2)
+				putdocx table tbl(`row',3)=("`pct_chg_`j''%"), halign(center) colspan(2)
+				local ++row
+				}
+			local new_row = (`row'+1)
+			putdocx table tbl(`new_row',1)=("Constant"), halign(left)  
+			putdocx table tbl(`new_row',2)=("`inf_cons'"), halign(center) colspan(2)
+			local ++new_row
+			putdocx table tbl(`new_row',1)=("R-squared"), halign(left) border(bottom)
+			putdocx table tbl(`new_row',2)=("`inf_R2'"), halign(center) colspan(2) border(bottom)
+			putdocx table tbl(`new_row',3)=(" "), halign(center) colspan(2) border(bottom)
+
+						
+			putdocx save "`fn'", replace
+		
 		}
 			else if "`mode'" == "tex" {
 				
