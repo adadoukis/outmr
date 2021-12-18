@@ -143,22 +143,22 @@ gettoken path using0: using
 			putdocx table tbl(6,5)=("`mc'"), halign(right)
 
 			putdocx table tbl(8,4)=("Sign stability"), halign(left)  
-			putdocx table tbl(8,5)=("`sign_stability'%"), halign(left)
+			putdocx table tbl(8,5)=("`sign_stability'%"), halign(right)
 		
 			putdocx table tbl(9,4)=("Significance rate"), halign(left)  
-			putdocx table tbl(9,5)=("`sig_rate'%"), halign(left)
+			putdocx table tbl(9,5)=("`sig_rate'%"), halign(right)
 			
 			putdocx table tbl(9,4)=("Positive"), halign(left)  
-			putdocx table tbl(9,5)=("`positive'%"), halign(left)
+			putdocx table tbl(9,5)=("`positive'%"), halign(right)
 
 			putdocx table tbl(10,4)=("Positive and significant"), halign(left)  
-			putdocx table tbl(10,5)=("`pos_and_sig'%"), halign(left)
+			putdocx table tbl(10,5)=("`pos_and_sig'%"), halign(right)
 
 			putdocx table tbl(11,4)=("Negative"), halign(left)  
-			putdocx table tbl(11,5)=("`negative'%"), halign(left)
+			putdocx table tbl(11,5)=("`negative'%"), halign(right)
 
 			putdocx table tbl(12,4)=("Negative and significant"), halign(left)  
-			putdocx table tbl(12,5)=("`neg_and_sig'%"), halign(left)
+			putdocx table tbl(12,5)=("`neg_and_sig'%"), halign(right)
 			local row = 15
 			forvalues j = 1/`n_terms' {	
 				putdocx table tbl(`row',1)=("`l_`j''"), halign(left)
