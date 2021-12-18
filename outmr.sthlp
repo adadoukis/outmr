@@ -47,7 +47,7 @@
 {pstd}
 
 {pstd}
- {cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.  The current version of {it:outmr} relies heaviliy on texdoc and putdoxc. {p_end}
+ {cmd:outmr} Exports results from mrobust into LaTex and Word.  The current version of {it:outmr} relies heaviliy on texdoc and putdoxc. {p_end}
 
 {marker options}{...}
 {title:Options}
