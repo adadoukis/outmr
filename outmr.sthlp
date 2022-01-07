@@ -32,7 +32,7 @@
 
 {synopt:{opt n:otes(string asis)}} Specifies the notes of the table.
 
-{synopt:{opt coef:labels(string asis)}} Specifies the format of the coefficient labels.  The current version of outmr is using the labels of each variable.  To include math notation in LaTex use \( \).
+{synopt:{opt coef:labels(string asis)}} Specifies the format of the coefficient labels.  The current version of {it:outmr} is using the labels of each variable.  To include math notation in LaTex use \( \).
 
 {synopt:{opt d:ec(#)}} Specifies the format of the coefficients.  The default is 4dp.
 
@@ -47,7 +47,7 @@
 {pstd}
 
 {pstd}
- {cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.  The current version of {it:outmr} relies heaviliy on texdoc and putdoxc. {p_end}
+ {cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.  The current version of {it:outmr} relies heaviliy on texdoc and putdoxc.  The current version of {it:outmr} does not support factor variables and time series operators (lags, leads, differences etc). {p_end}
 
 {marker options}{...}
 {title:Options}
