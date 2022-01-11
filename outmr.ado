@@ -1,4 +1,4 @@
-// mrobust_export v1 - 02-12-2021
+// mrobust_export v1 - 11-01-2022
 // A. Dadoukis
 
 capture program drop outmr
@@ -229,6 +229,5 @@ tex \end{tablenotes}
 tex \end{threeparttable}
 tex \end{table}
 texdoc close			
-
 }
-end 
+end
