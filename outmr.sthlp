@@ -48,7 +48,7 @@
 
 {pstd}
 
-{cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.  The current version of {it:outmr} relies heaviliy on texdoc and putdoxc.  This version does not support factor variables and time series operators (lags, leads, differences etc). {p_end}
+{cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only minimal customization is supported.  The current version of {it:outmr} relies heaviliy on texdoc and putdoxc.  This version does not support factor variables and time series operators (lags, leads, differences etc). {p_end}
 
 
 {marker options}{...}
