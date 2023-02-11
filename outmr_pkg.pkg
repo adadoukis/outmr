@@ -1,7 +1,7 @@
 v 1
 d 'OUTMR_PKG': Export results to LaTex and Word
 d 
-d Distribution-Date:   20211205
+d Distribution-Date:   20230211
 d License: Academic Free License v3.0
 d 
 F outmr.ado

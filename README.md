@@ -1,6 +1,6 @@
 _v. 1_  
 
-`outmr_pkg` : Export results from the mrobust command in Stata, to LaTex and Word
+`outmr_pkg` : Export results to LaTex and Word
 ==============================================
 
 

@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 1.0  7 Dec 2021}{...}
+{* *! version 1.0 11 Feb 2023}{...}
 {vieweralsosee "" "--"}{...}
 {vieweralsosee "Install command2" "ssc install command2"}{...}
 {vieweralsosee "Help command2 (if installed)" "help command2"}{...}
@@ -28,15 +28,15 @@
 {syntab:Optional}
 {synopt:{opt t:itle(string)}} Specifies the caption of the table.
 
-{synopt:{opt l:abel(string)}} Specifies the label of the table.
+{synopt:{opt l:abel(string)}} Specifies the label of the table
 
-{synopt:{opt n:otes(string asis)}} Specifies the notes of the table.
+{synopt:{opt n:otes(string asis)}} Specifies the notes of the table
 
-{synopt:{opt coef:labels(string asis)}} Specifies the format of the coefficient labels.  The current version of {it:outmr} is using the labels of each variable.  To include math notation in LaTex use \( \).
+{synopt:{opt coef:labels(string asis)}} Specifies the format of the coefficient labels.  The current version of outmr is using the labels of each variable.  To include math notation in LaTex use \(\).
 
 {synopt:{opt d:ec(#)}} Specifies the format of the coefficients.  The default is 4dp.
 
-{synopt:{opt rep:lace}} replace the extisting file.
+{synopt:{opt rep:lace}} replace 
 
 {synoptline}
 {p2colreset}{...}
@@ -47,9 +47,7 @@
 {pstd}
 
 {pstd}
-
-{cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only minimal customization is supported.  The current version of {it:outmr} relies heaviliy on texdoc and putdoxc.  This version does not support factor variables and time series operators (lags, leads, differences etc). {p_end}
-
+ {cmd:outmr} Exports results from mrobust into LaTex and Word.  Currently only LaTex is supported with minimal customization.
 
 {marker options}{...}
 {title:Options}
@@ -59,57 +57,58 @@
 {opt t:itle(string)}  Specifies the caption of the table.
 
 {phang}
-{opt l:abel(string)}  Specifies the label of the table.
+{opt l:abel(string)}  Specifies the label of the table
 
 {phang}
-{opt n:otes(string asis)}  Specifies the notes of the table.
+{opt n:otes(string asis)}  Specifies the notes of the table
 
 {phang}
-{opt coef:labels(string asis)}  Specifies the format of the coefficient labels.  The current version of {it:outmr} is using the labels of each variable.  To include math notation in LaTex use \( \).
+{opt coef:labels(string asis)}  Specifies the format of the coefficient labels.  The current version of outmr is using the labels of each variable.  To include math notation in LaTex use \(\).
 
 {phang}
 {opt d:ec(#)}  Specifies the format of the coefficients.  The default is 4dp.
 
 {phang}
-{opt rep:lace} replace the extisting file.
+{opt rep:lace} replace 
 
 
 
 {marker examples}{...}
 {title:Examples}
 
-{pstd}Example 1: Estimate model uncertaining using {it:mrobust}, and export the results to results.tex. {p_end}
+{pstd}Example 1: Setup
 
-{phang2}{cmd: sysuse nlsw88, clear}
+{phang2}{stata sysuse nlsw88, clear}
 
-{phang2}{cmd: mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
+{pstd}Execute mrobust 
 
-{phang2}{cmd: outmr using results.tex, title(Add this title to the table) notes(This is a note) replace}
+{phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
 
+{pstd}Export results to results.tex file
+
+{phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) replace}
  
-{pstd}Example 2: Label the variable age to age_it, before the estimation of {it:mrobust}, and export the results to results.tex file using 3 decimal points. {p_end}
+{pstd}Example 2: Setup
 
-{phang2}{cmd: sysuse nlsw88, clear}
+{phang2}{stata sysuse nlsw88, clear}
 
-{phang2}{cmd: label var age "\(age_{c -(}it{c )-}\)"}
+{pstd}Change the label of age to age_it 
 
-{phang2}{cmd: mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
+{phang2}{stata label var age "\(age_{it}\)"}
 
-{phang2}{cmd: outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
+{pstd}Execute mrobust 
 
+{phang2}{stata mrobust regress union hours age grade collgrad married south smsa c_city ttl_exp tenure , noplot}
 
-{pstd}Example 3: Estimate model uncertainty using {it:mrobust}, and export the results to results.docx. {p_end}
+{pstd}Export results to results.tex file using 3 decimal points
 
-{phang2}{cmd: sysuse nlsw88, clear}
+{phang2}{stata outmr using results.tex, title(Add this title to the table) notes(This is a note) dec(3) replace}
 
-{phang2}{cmd: mrobust regress union hours age grade , noplot}
-
-{phang2}{cmd: outmr using results.docx, title(This is a table created in word) notes(This is a note) replace}
 
 {title:Author}
 {p}
 
-Aristeidis Dadoukis, The University of Nottingham, Nottingham University Business School Department of Finance, Risk and Banking.
+Aristeidis Dadoukis, The University of Nottingham, Nottingham University Business School.
 
 Email {browse "mailto:aristeidis.dadoukis@gmail.com":aristeidis.dadoukis@gmail.com}
 
@@ -120,4 +119,4 @@ Related commands:
 
 {help mrobust} (if installed) {stata ssc install mrobust, replace} (to install this command)
 {help texdoc}  (if installed) {stata ssc install texdoc, replace}  (to install this command)
-{help putdox} {if installed}
+
